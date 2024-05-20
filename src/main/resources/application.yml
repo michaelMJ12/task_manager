@@ -1,0 +1,61 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/taskdb
+    username: postgres
+    password: michaelMJ12
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    show_sql: false
+    properties:
+      hibernate:
+        show_sql: false
+        generate_statistics: false
+        use_sql_comments: false
+        temp:
+          use_jdbc_metadata_defaults: false
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    port: 587
+    username: rotimimichaeljames@gmail.com
+    password: rjxpdzcfcyvlcqvn
+
+    properties:
+      mail:
+        smtp:
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+          starttls:
+            enable: true
+
+
+server:
+  port: 2222
+  ssl:
+    key-store: classpath:NewKeyStore.jks
+    key-store-password: password
+    key-store-type: jks
+    key-alias: nsirs
+    key-password: password
+    enabled: false
+
+
+
+  servlet:
+    context-path: /api
+
+
+
+security:
+  config:
+    issuer-id: 'https://tin.nsirs.ng'
+    access-token-lifespan: 3600
+    refresh-token-lifespan: 4800
+    signup-token-lifespan: 3600
+    password-reset-token-lifespan: 86400
+    secret: jtbtin123$
+
+
